@@ -1,12 +1,17 @@
 import webbrowser
 import pandas as pd
+import pyautogui as pg
+import time
 
 def open_webpage(url):
     webbrowser.open(url)
     return True
 
 def sendMsg(msg, num):
-    open_webpage("https://api.whatsapp.com/send?phone="+num+"&text="+msg)
+    open_webpage("https://api.whatsapp.com/send?phone=91"+num+"&text="+msg)
+    time.sleep(2)
+    pg.press('enter')
+
     return True
 
 def sendMsgs_excel(infile):
@@ -15,4 +20,5 @@ def sendMsgs_excel(infile):
         num = str(df.iloc[i,0])
         msg = str(df.iloc[i,1])
         sendMsg(msg, num)
+        time.sleep(1)
     return True
