@@ -10,7 +10,7 @@ def open_webpage(url):
 def sendMsg(msg, num):
     open_webpage("https://api.whatsapp.com/send?phone=91"+num+"&text="+msg)
     time.sleep(2)
-    pg.press('enter')
+    pg.hotkey('enter')
 
     return True
 
@@ -20,5 +20,7 @@ def sendMsgs_excel(infile):
         num = str(df.iloc[i,0])
         msg = str(df.iloc[i,1])
         sendMsg(msg, num)
-        time.sleep(1)
+    pg.hotkey('alt', 'tab')
+    for i in range(len(df)):
+        pg.hotkey('ctrl', 'w')
     return True
