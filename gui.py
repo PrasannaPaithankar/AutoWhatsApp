@@ -1,11 +1,12 @@
 import tkinter as tk
+from tkinter import filedialog
 import functions
 
 infile=""
 
 def fileSelect():
     global infile
-    infile = tk.filedialog.askopenfilename(title="Select Input File", filetypes=(("Excel Files", "*.xlsx"), ("All Files", "*.*")))
+    infile = filedialog.askopenfilename(title="Select Input File", filetypes=(("Excel Files", "*.xlsx"), ("All Files", "*.*")))
     infilepathLabel.config(text=infile)
     return True
 
@@ -26,4 +27,4 @@ if __name__ == "__main__":
     sendMsgsButton.grid(row=1, column=1, padx=5, pady=5)
 
     root.mainloop()
-    
+
