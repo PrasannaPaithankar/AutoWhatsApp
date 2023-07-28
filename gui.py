@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     # Send message to all numbers in input file
     sendMsgsButton = tk.Button(root, text="Send Messages", command=lambda: functions.sendMsgs_excel(infile))
-    sendMsgsButton.grid(row=1, column=1, padx=5, pady=5)
+    sendMsgsButton.grid(row=1, column=0, padx=5, pady=5)
 
     root.mainloop()
 
